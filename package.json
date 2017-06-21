@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "koa": "^2.2.0"
+    "koa": "^2.2.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^3.0.0",
+    "pouchdb": "^6.2.0"
   }
 }
