@@ -69,7 +69,7 @@ router.post('/change', async (ctx, next) => {
       _id: doc._id,
       _rev: doc._rev,
       name: postData.name,
-      password: postData.password,
+      password: doc.password,
       sex: postData.sex,
       desc: postData.desc
     });

